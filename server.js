@@ -7,8 +7,12 @@ require('dotenv').config();
 const port = 5000;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors()); // to enable cors
 
+/*
+Method : GET
+Purpose: to fetch the stories from nytimes
+*/
 app.get('/api/top-stories', async (req, res) => {
 	try {
 		const response = await axios.get(
